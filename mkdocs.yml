@@ -1,0 +1,147 @@
+# Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to
+# deal in the Software without restriction, including without limitation the
+# rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+# sell copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+# IN THE SOFTWARE.
+
+# Project information
+site_name: Cloud Monk
+site_description: TechBlog
+site_author: Christian Friedli
+site_url: http://cloudmonk.ch
+
+# Repository
+repo_name: cfriedli/rh-notes       
+repo_url: https://github.com/cfriedli/rh-notes
+edit_uri: ""
+
+# Copyright
+copyright: 'Copyright &copy; 2016 - 2020 Christian Friedli'
+
+# Configuration
+# Configuration
+theme:
+  name: 'material' 
+  # name: 'readthedocs'
+#  name: 'cyborg'
+  favicon: 'img/favicon.ico'
+  logo: 'img/Ansible_logo.png'
+      #icon: 'filter_drama'
+
+theme:
+  name: material
+  favicon: 'img/favicon.ico'
+  logo: #'img/Ansible_logo.png'
+      icon: 'filter_drama'
+
+  color: white
+  features:
+    tabs: true
+  # 404 page
+  static_templates:
+    - 404.html
+
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+
+  # Default values, taken from mkdocs_theme.yml
+  language: en
+  feature:
+    tabs: true
+  palette:
+    primary: White
+    accent: White
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+# Plugins
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - markdown.extensions.def_list
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
+  - markdown.extensions.toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Page tree
+nav:
+  - Ansible Notes:
+    - Introduction:                            'index.md'
+    - Introducing Ansible:                     'rh-ansible/rh-do407/Introducing-Ansible.md'
+    - Deplaying Ansible:                       'rh-ansible/rh-do407/Deploying-Ansible.md'
+    - Implement Playbooks:                     'rh-ansible/rh-do407/Implementing-Playbooks.md'
+    - Managing Varables and Facts:             'rh-ansible/rh-do407/Managing-Veriables-and-Facts.md'
+    - Implementing Task Control:               'rh-ansible/rh-do407/Implementing-Task-Control.md'
+    - Simplifizing Playbooks with roles:       'rh-ansible/rh-do407/simplifizing-playbooks-with-roles.md'
+    - Ansible Modules:                         'rh-ansible/rh-do407/modules.md'
+    - References:                              'rh-ansible/rh-do407/References.md'
+  - API Notes:   
+    - Introduction:  'api-notes/api-index.md'
+    - Interacting with RESTful API's (URI):    'api-notes/URI-API.md'
+    - References:                              'api-notes/references.md'
+  - AWS Notes:   
+    - Introduction:                            'aws/aws-index.md'
+    - References:                              'aws/references.md'
+
+# Google Analytics
+#google_analytics:
+#  - !!python/object/apply:os.getenv ["GOOGLE_ANALYTICS_KEY"]
+#  - auto
+# Customization
+extra:
+  social:
+    - type: github
+      link: https://github.com/cfriedli
+    - type: twitter
+      link: https://twitter.com/chgumucio
+    - type: linkedin
+      link: https://www.linkedin.com/in/christian-friedli-b36072118/ 
+
+extra_css:
+ - 'stylesheets/unibe.css'
+

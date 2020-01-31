@@ -123,7 +123,7 @@ nav:
   - API Notes:   
     - Introduction:  'api-notes/api-index.md'
     - Interacting with RESTful API's (URI):    'api-notes/URI-API.md'
-    - References:                              'api-notes/references.md'
+    #- References:                              'api-notes/references.md'
   - AWS Notes:   
     - Introduction:                            'aws/aws-index.md'
     - References:                              'aws/references.md'

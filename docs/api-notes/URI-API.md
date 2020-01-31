@@ -10,13 +10,6 @@
 
 #### Overview:
 
-```yaml
-    1. It users HTTP methods suitably (GET for getting data, POST for creating)
-    2. Scoping information(and other data) goes in the parameters part of the URI.
-    3. It users common data formats (most commonly JSON)
-    4. Commuication is stateless
-```
-
 #### Questions evrey API should answer:
 ```yaml
     1. How can the client tell the service provider which operation it wants to perform? (Method information)

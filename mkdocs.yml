@@ -25,7 +25,7 @@ site_author: Christian Friedli
 site_url: http://cloudmonk.ch
 
 # Repository
-repo_name: cfriedli/rh-notes       
+repo_name: cfriedli/cloudmonk
 repo_url: https://github.com/cfriedli/cloudmonk
 edit_uri: ""
 
@@ -35,7 +35,7 @@ copyright: 'Copyright &copy; 2016 - 2020 Christian Friedli'
 # Configuration
 # Configuration
 theme:
-  name: 'material' 
+  name: 'material'
   # name: 'readthedocs'
 #  name: 'cyborg'
   favicon: 'img/favicon.ico'
@@ -120,11 +120,11 @@ nav:
     - Simplifizing Playbooks with roles:       'rh-ansible/rh-do407/simplifizing-playbooks-with-roles.md'
     - Ansible Modules:                         'rh-ansible/rh-do407/modules.md'
     - References:                              'rh-ansible/rh-do407/References.md'
-  - API Notes:   
+  - API Notes:
     - Introduction:  'api-notes/api-index.md'
     - Interacting with RESTful API's (URI):    'api-notes/URI-API.md'
     #- References:                              'api-notes/references.md'
-  - AWS Notes:   
+  - AWS Notes:
     - Exercises:
         Build and Launch WordPress on AWS:                 'aws/aws-blog.md'
     - References:                              'aws/references.md'
@@ -141,7 +141,7 @@ extra:
     - type: twitter
       link: https://twitter.com/chgumucio
     - type: linkedin
-      link: https://www.linkedin.com/in/christian-friedli-b36072118/ 
+      link: https://www.linkedin.com/in/christian-friedli-b36072118/
 
 extra_css:
  - 'stylesheets/unibe.css'

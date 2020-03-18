@@ -99,7 +99,7 @@ OR Operation
 ```yaml
 when: ansible_distribution == "RedHat"       or ansible_distribution == "Fedora"
 ```
-#### Grouping condidions
+#### Grouping Conditions
 ```yaml
 when: >
     ( ansible_distribution == "RedHat" and 
@@ -126,10 +126,7 @@ when: >
 |First variable's </br> is present as a value in second </br> variable's list | ansible_ditribution in </br>  supported_distros|
 
 ### LOOPS and Conditions
-!!! note
-    Install mariadb-server when:<br><br>
-    -  "/" mounted <br>
-    -  more than 300 MB Free<br>
+#### Example: File System Size 
 
 ```yaml
 - name: install mariadb-server if enough space on root
@@ -139,10 +136,31 @@ when: >
   loop: "{{ ansible_mounts }}"
   when: item.mount == "/" and item.size_available > 300000000
 ```
+
+#### Example: Podman
+
+
+```yaml
+
+- name: Configure /etc/container/*.conf
+  template:
+    src: "{{ item }}.j2"
+    dest: "/{{ item }}"
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+  loop:
+    - etc/containers/libpod.conf
+    - etc/containers/registries.conf
+    - etc/containers/storage.conf
+```
 ### Using Handlers
 
 !!! note "Important things to remember about Handlers"
     Notify handlers are always run in the same order they are defined, not in the order listed in the notify-statement. This is also the case for handlers using listen.
+
+    Handlers execute at the end
 
     Handler names and listen topics live in a global namespace.
 
@@ -152,3 +170,41 @@ when: >
 
     You cannot notify a handler that is defined inside of an include. As of Ansible 2.1, this does work, however the include must be static.
 
+#### How Handlers work
+
+```yaml
+    
+    - name: mariadb-server packages are installed
+      yum:
+        name: mariadb-server
+        state: present
+      notify:
+        - set alter password
+    
+    - name: Make sure that mariadb is running
+      service:
+        name: mariadb
+        state: started
+        enabled: true
+
+    - name: The my.cnf has been installed
+      get_url:
+        url: https://config.cloudmonk.ch/my.cnf
+        dest: /etc/my.cnf
+        owner: mysql
+        group: mysql
+        force: true
+      notify:
+        - restart mariadb service
+  
+  handlers:
+    - name: restart mariadb service
+      service:
+        name: mariadb
+        state: restarted
+
+    - name: set alter password
+      mysql_user:
+        name: john doe
+        password: unknown
+```

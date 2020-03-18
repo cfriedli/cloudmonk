@@ -208,3 +208,69 @@ when: >
         name: john doe
         password: unknown
 ```
+
+### Handling Task Failure
+
+#### ignore_errors
+
+```yaml
+  - name: Install Adobe Photoshop® 
+    yum:
+      name: Adobe-Photoshop®
+      state: latest
+   ignore_errors: true
+
+```
+
+#### force_handlers
+
+!!! note  "Default behaviour" 
+    When a task failes, any handler that had been notified by earlier in the play will not run. 
+!!! note "When force_handlers: true"
+    Notified handlers are called even if the play aborted becouse a later task failed
+```yaml
+- hosts: karen-workstation
+  force_handlers: true
+  tasks:
+    - name: Karen likes Adobe Photoshop®. So let's install GIMP instead.
+      yum:
+        name: gimp
+        state: latest
+      notify: open gimp
+
+    - name: Install Adobe Photoshop® for Karen
+      yum:
+        name: Adobe-Photoshop®
+        state: latest
+     ignore_errors: false
+```  
+
+
+#### failed_when
+
+```yaml 
+  tasks:
+  - name: convert karen.jpg to karen.png
+    shell: convert /home/karen/karen.jpg /home/karen/karen.png
+    register: command_result
+    failed_when: "'unable to open image' in command_result.stdout"
+
+```
+
+#### changed_when
+
+```yaml 
+  tasks:
+    - name: upgrade 
+      shell: /usr/local/bin/upgrade
+      register: command_result
+      changed_when: "'Success' in command_result.stdout"
+      notify:
+        - restart httpd
+
+  handlers: 
+    - name: restart httpd
+      service:
+        name: httpd
+        state: restarted
+```

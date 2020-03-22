@@ -36,15 +36,15 @@ package=nginx
     
     Managed hosts are defined in the inyenfory.     
 
-    Inventories can be static files or dynamically     
+    Inventories can be static files or dynamically.     
 
-    The location of the inventory is controlled by the Ansible configuration.
+    Location of the inventory is controlled by the Ansible configuration.
 
-    The first configuration file found is used; all others are ignored.
+    First configuration file found is used; all others are ignored.
 
-    The ansible command is used to perform ad hoc commands on managed hosts.
+    Ansible command is used to perform ad hoc commands on managed hosts.
 
     Ad hoc commands determine there actions through the use of modules and their arguments.
     
-    Ad hoc commands can escalate there permissions through the Ansible's privilege escalation features
+    Ad hoc commands can escalate there permissions through the Ansible's privilege escalation features.
 

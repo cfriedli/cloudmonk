@@ -274,3 +274,30 @@ when: >
         name: httpd
         state: restarted
 ```
+
+#### block
+
+#### error handling
+
+| Operation      	                                                     | Example                     	               |
+|-----------     	                                                     |-----------------------------	               |
+|block    	                                                     | Defines the main task 	               |
+|rescue          	                                                     | Tasks to run if tasks in block clause fail.|
+|always          	                                                     | Tasks that will allways run|
+
+```yaml
+
+- block:
+    - name: update database schema on pg-prod1 
+      shell:
+        cmd: schema_update pg-prod1
+      delegate_to: pg-prod1
+  rescue:
+    - name: rollback database on pg-prod1
+      shell:
+        cmd: rollback_database pd-prod1
+  always:
+    - name: check application on app_cluster
+      shell:
+        cmd: check_application.sh
+```

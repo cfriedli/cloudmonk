@@ -113,7 +113,7 @@ nav:
   - Ansible Notes:
     - Introduction:                            'index.md'
     - Introducing Ansible:                     'rh-ansible/rh-do407/Introducing-Ansible.md'
-    - Deplaying Ansible:                       'rh-ansible/rh-do407/Deploying-Ansible.md'
+    - Deploying Ansible:                       'rh-ansible/rh-do407/Deploying-Ansible.md'
     - Implement Playbooks:                     'rh-ansible/rh-do407/Implementing-Playbooks.md'
     - Managing Varables and Facts:             'rh-ansible/rh-do407/Managing-Veriables-and-Facts.md'
     - Implementing Task Control:               'rh-ansible/rh-do407/Implementing-Task-Control.md'
@@ -125,9 +125,17 @@ nav:
     - Interacting with RESTful API's (URI):    'api-notes/URI-API.md'
     #- References:                              'api-notes/references.md'
   - AWS Notes:
-    - Exercises:
+    - Introduction: 'aws/aws-index.md'
+    - Systemd-Units:
         Build and Launch WordPress on AWS:                 'aws/aws-blog.md'
     - References:                              'aws/references.md'
+  - SystemD Notes:
+    - Introduction: 'systemd/systemd-index.md'
+    - systemctl:    'systemd/systemd-systemctl.md'
+    - Units:
+        systemd.mount:      'systemd/systemd-mount.md'
+    - References:                              'aws/references.md'
+
 
 # Google Analytics
 #google_analytics:

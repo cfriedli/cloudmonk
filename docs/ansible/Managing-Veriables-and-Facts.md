@@ -22,9 +22,9 @@ Host scope: By the inventory, fact gathering, registred tasks.
 ```
 #### Variables in playbooks
 ```yaml
-#When a variable is used as the first element to start a value, quotes are mandatory
-#This prevents Ansible from interpreting the variable reference as starting a YAML
-#dictionary.
+# When a variable is used as the first element to start a value, quotes are mandatory
+# This prevents Ansible from interpreting the variable reference as starting a YAML
+# dictionary.
 
 yum:
   name: "{{ name }}"

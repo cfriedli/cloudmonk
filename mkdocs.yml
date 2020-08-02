@@ -114,8 +114,13 @@ nav:
   - API Notes:
     - Introduction:  'api-notes/api-index.md'
     - Interacting with RESTful API's (URI):    'api-notes/URI-API.md'
-    #- References:                              'api-notes/references.md'
-    - References:                              'aws/references.md'
+  - AWS Notes:
+    - Introduction: 'aws/aws-index.md'
+  - SystemD Notes:
+    - Introduction: 'systemd/systemd-index.md'
+    - systemctl:    'systemd/systemd-systemctl.md'
+    - Units:
+        systemd.mount:      'systemd/systemd-mount.md'
 
 # Google Analytics
 #google_analytics:

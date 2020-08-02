@@ -25,7 +25,7 @@ site_author: Christian Friedli
 site_url: http://cloudmonk.ch
 
 # Repository
-repo_name: cfriedli/rh-notes       
+repo_name: cfriedli/cloudmonk
 repo_url: https://github.com/cfriedli/cloudmonk
 edit_uri: ""
 
@@ -35,18 +35,9 @@ copyright: 'Copyright &copy; 2016 - 2020 Christian Friedli'
 # Configuration
 # Configuration
 theme:
-  name: 'material' 
-  # name: 'readthedocs'
-#  name: 'cyborg'
+  name: 'material'
   favicon: 'img/favicon.ico'
   logo: 'img/Ansible_logo.png'
-      #icon: 'filter_drama'
-
-theme:
-  name: material
-  favicon: 'img/favicon.ico'
-  logo: #'img/Ansible_logo.png'
-      icon: 'filter_drama'
 
   color: white
   features:
@@ -112,21 +103,18 @@ markdown_extensions:
 nav:
   - Ansible Notes:
     - Introduction:                            'index.md'
-    - Introducing Ansible:                     'rh-ansible/rh-do407/Introducing-Ansible.md'
-    - Deplaying Ansible:                       'rh-ansible/rh-do407/Deploying-Ansible.md'
-    - Implement Playbooks:                     'rh-ansible/rh-do407/Implementing-Playbooks.md'
-    - Managing Varables and Facts:             'rh-ansible/rh-do407/Managing-Veriables-and-Facts.md'
-    - Implementing Task Control:               'rh-ansible/rh-do407/Implementing-Task-Control.md'
-    - Simplifizing Playbooks with roles:       'rh-ansible/rh-do407/simplifizing-playbooks-with-roles.md'
-    - Ansible Modules:                         'rh-ansible/rh-do407/modules.md'
-    - References:                              'rh-ansible/rh-do407/References.md'
-  - API Notes:   
+    - Introducing Ansible:                     'ansible/Introducing-Ansible.md'
+    - Deplaying Ansible:                       'ansible/Deploying-Ansible.md'
+    - Implementing Playbooks:                  'ansible/Implementing-Playbooks.md'
+    - Managing Varables and Facts:             'ansible/Managing-Veriables-and-Facts.md'
+    - Implementing Task Control:               'ansible/Implementing-Task-Control.md'
+    - Simplifizing Playbooks with roles:       'ansible/simplifizing-playbooks-with-roles.md'
+    - Ansible Modules:                         'ansible/modules.md'
+    - References:                              'ansible/References.md'
+  - API Notes:
     - Introduction:  'api-notes/api-index.md'
     - Interacting with RESTful API's (URI):    'api-notes/URI-API.md'
     #- References:                              'api-notes/references.md'
-  - AWS Notes:   
-    - Exercises:
-        Build and Launch WordPress on AWS:                 'aws/aws-blog.md'
     - References:                              'aws/references.md'
 
 # Google Analytics
@@ -141,7 +129,7 @@ extra:
     - type: twitter
       link: https://twitter.com/chgumucio
     - type: linkedin
-      link: https://www.linkedin.com/in/christian-friedli-b36072118/ 
+      link: https://www.linkedin.com/in/christian-friedli-b36072118/
 
 extra_css:
  - 'stylesheets/unibe.css'

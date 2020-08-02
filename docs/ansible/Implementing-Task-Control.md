@@ -1,8 +1,6 @@
 <a name="loops"></a>
-### LOOPS:
-##### Simple Loops 
-List of items over the task should be iterated. 
-
+##### Loops 
+###### Loop over items 
 ```yaml
 - name: Postfix and Dovecot are running
   service:
@@ -12,7 +10,7 @@ List of items over the task should be iterated.
     - postfix
     - dovecot
 ```
-via variable
+###### Loop over Variables
 ```yaml
 vars:
   mail_services:
@@ -26,7 +24,17 @@ tasks:
     loop: "{{ mail_service }}"
 
 ```
-##### Loops over a List of Hashes/Dictionaries
+###### Loop over a List of Tasks
+```yaml
+- name: looping over a list of all linux ecs in london
+  include: include.yml
+  with_inventory_hostnames: london:&linux
+  loop_control:
+    loop_var: servername
+
+```
+
+###### Loop over a List of Hashes/Dictionaries
 ```yaml
 - name: Users exist and are in the correct groups
   user:
